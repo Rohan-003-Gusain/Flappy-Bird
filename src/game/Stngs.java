@@ -1,8 +1,12 @@
+package game;
+
 import java.awt.*;
 import javax.swing.*;
 
 public class Stngs extends JPanel {
 
+	private static final long serialVersionUID = 1L;
+	
     JButton butn, b1, b2, b3;
     ImageIcon ImageIcon1, ImageIcon2, ImageIcon3;
     ImageIcon SIcon1, SIcon2, SIcon3;
@@ -14,25 +18,29 @@ public class Stngs extends JPanel {
     Medium mediumPanel;
     Hard hardPanel;
     Main frame;
+    
     public Stngs (Easy easyPanel, Medium mediumPanel, Hard hardPanel, Main frame) {
-        this.easyPanel = easyPanel;
+        
+    	this.easyPanel = easyPanel;
         this.mediumPanel = mediumPanel;
         this.hardPanel = hardPanel;
         this.frame = frame;
+        
+        this.setFocusable(false);
        
         this.setBounds(290, 10, 40, 100);
         this.setOpaque(false);
         this.setLayout(null);
         
-        ImageIcon1 = new ImageIcon(getClass().getResource("SettingsPhotos/home.png"));
+        ImageIcon1 = new ImageIcon(getClass().getResource("/assets/settingsIcons/home.png"));
         scaledImage1 = ImageIcon1.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
         SIcon1 = new ImageIcon(scaledImage1);
 
-        ImageIcon2 = new ImageIcon(getClass().getResource("SettingsPhotos/soundOn.png"));
+        ImageIcon2 = new ImageIcon(getClass().getResource("/assets/settingsIcons/soundOn.png"));
         scaledImage2 = ImageIcon2.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
         SIcon2 = new ImageIcon(scaledImage2);
 
-        ImageIcon3 = new ImageIcon(getClass().getResource("SettingsPhotos/soundOff.png"));
+        ImageIcon3 = new ImageIcon(getClass().getResource("/assets/settingsIcons/soundOff.png"));
         scaledImage3 = ImageIcon3.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
         SIcon3 = new ImageIcon(scaledImage3);
 
@@ -44,6 +52,7 @@ public class Stngs extends JPanel {
         PopUp.setVisible(true); 
 
         b1 = new JButton(SIcon1);
+        b1.setFocusable(false);
         b1.setBorderPainted(false);
         b1.setContentAreaFilled(false);
         b1.setFocusPainted(false);
@@ -67,6 +76,7 @@ public class Stngs extends JPanel {
         });
 
         b2 = new JButton(SIcon2);
+        b2.setFocusable(false);
         b2.setBorderPainted(false);
         b2.setContentAreaFilled(false);
         b2.setFocusPainted(false);

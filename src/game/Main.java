@@ -1,3 +1,5 @@
+package game;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -5,6 +7,8 @@ import javax.swing.*;
 
 public class Main extends JFrame implements ActionListener{
 
+	private static final long serialVersionUID = 1L;
+	
     CardLayout cardLayout;
     JPanel mainPanel, homePanel;
     Image bg, birdImg;
@@ -17,7 +21,6 @@ public class Main extends JFrame implements ActionListener{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Main Panel = सिर्फ Manager (CardLayout सेट किया)
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
 
@@ -29,8 +32,8 @@ public class Main extends JFrame implements ActionListener{
         };
         homePanel.setLayout(null);
 
-        bg = new ImageIcon(getClass().getResource("Photos/flappybirdbg.png")).getImage();
-        birdImg = new ImageIcon(getClass().getResource("Photos/flappybird.png")).getImage();
+        bg = new ImageIcon(getClass().getResource("/assets/photos/flappybirdbg.png")).getImage();
+        birdImg = new ImageIcon(getClass().getResource("/assets/photos/flappybird.png")).getImage();
 
         heading = new JLabel("<html>FLAPPY<br>BIRD 2</html>");
         heading.setBounds(90, 20, 170, 100);
@@ -71,11 +74,11 @@ public class Main extends JFrame implements ActionListener{
 
         btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn.setBackground(new Color(0, 153, 255)); // Lighter blue on hover
+                btn.setBackground(new Color(0, 153, 255)); 
             }
         
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn.setBackground(Color.BLUE); // Original blue color when not hovered
+                btn.setBackground(Color.BLUE); 
             }
         });
     }
