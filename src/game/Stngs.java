@@ -128,7 +128,6 @@ public class Stngs extends JPanel {
         add(PopUp);
      
     }
-
 }
 
 

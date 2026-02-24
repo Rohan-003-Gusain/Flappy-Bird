@@ -30,6 +30,7 @@ public class Main extends JFrame implements ActionListener{
                 draw(g);
             }
         };
+        
         homePanel.setLayout(null);
 
         bg = new ImageIcon(getClass().getResource("/assets/photos/flappybirdbg.png")).getImage();

@@ -187,6 +187,7 @@ public class Medium extends JPanel implements ActionListener, KeyListener{
                 if (stng.isVisible()) {
                     gameloop.stop();
                     placePipesTimer.stop();
+                    
                 } else {
                 	requestFocusInWindow();
                 }
