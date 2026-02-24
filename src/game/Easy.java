@@ -265,6 +265,7 @@ public class Easy extends JPanel implements ActionListener, KeyListener{
      
     // Movement and Collision Detection 
     private void move() {
+    	
         if (!gameStarted) return;
         
         velocityY += gravity;
@@ -274,10 +275,10 @@ public class Easy extends JPanel implements ActionListener, KeyListener{
         }
         
         bird.y += velocityY;
-
+        
         for (Pipe pipe : pipes) {
             pipe.x += velocityX;
-
+            
             if (!pipe.passed && bird.x > pipe.x + pipe.width) {
                 if (pipe.y > 0) {
                     score += 1; 
@@ -287,15 +288,15 @@ public class Easy extends JPanel implements ActionListener, KeyListener{
                 coinSound.start();
                 updateDifficulty();
             }
-
+            
             if (collision(bird, pipe)) {
                 triggerGameOver();
             }
-
+            
             if (bird.y < 0) {
                 triggerGameOver();
             }
-
+            
             if (bird.y + bird.height >= BORDER_HEIGHT) {
                 triggerGameOver();               
             }
